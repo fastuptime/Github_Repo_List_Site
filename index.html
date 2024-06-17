@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GitHub Repo List</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+         body {
+         font-family: 'Inter', sans-serif;
+         }
+         .repo-card {
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+         .repo-card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+         }
+         .repo-details {
+         display: none;
+         }
+         .repo-card:hover .repo-details {
+         display: block;
+         }
+         h1 {
+         font-family: 'Inter', sans-serif;
+         font-weight: 700;
+         font-size: 2.5rem;
+         }
+      </style>
+   </head>
+   <body class="bg-gray-50 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
+      <nav class="bg-white shadow-md py-4 px-6">
+         <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">GitHub Repo List</a>
+            <div class="space-x-4 text-gray-800">
+               <a href="#projects" class="text-gray-600 hover:text-gray-800">Projects</a>
+               <a href="#about" class="text-gray-600 hover:text-gray-800">About</a>
+               <a href="#social-media" class="text-gray-600 hover:text-gray-800">Social Media</a>
+            </div>
+         </div>
+      </nav>
+      <section class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-20">
+         <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to My GitHub Repo List</h1>
+            <p class="text-lg">Discover my projects and learn more about what I do.</p>
+         </div>
+      </section>
+      <section id="projects" class="container mx-auto py-16">
+         <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center">Projects</h2>
+         <div id="repo-list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" style="max-width: 90%; margin: 0 auto;">
+         </div>
+      </section>
+      <section id="projectDetails" class="bg-gray-100 py-16" style="display: none;">
+         <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Project Details</h2>
+            <div id="projectDetailsContent" class="max-w-2xl mx-auto"></div>
+         </div>
+      </section>
+      <section id="about" class="bg-gray-100 py-16">
+         <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">About Me</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto">I'm a software developer with a passion for creating innovative solutions. I specialize in full-stack development and enjoy working on open-source projects in my free time.</p>
+         </div>
+      </section>
+      <section id="social-media" class="bg-white py-16">
+         <div class="container mx-auto text-center">
+         <h2 class="text-4xl font-bold text-gray-800 mb-6">Follow Me</h2>
+         <div class="flex justify-center space-x-6">
+            <a href="https://twitter.com/fastuptime" target="_blank" class="text-gray-600 hover:text-gray-800">
+               <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557a9.917 9.917 0 01-2.825.775 4.932 4.932 0 002.165-2.724 9.865 9.865 0 01-3.127 1.196 4.924 4.924 0 00-8.385 4.482 13.978 13.978 0 01-10.16-5.15 4.822 4.822 0 001.524 6.573 4.896 4.896 0 01-2.23-.617c-.054 2.281 1.581 4.415 3.949 4.894a4.902 4.902 0 01-2.224.084 4.923 4.923 0 004.604 3.416 9.868 9.868 0 01-6.102 2.105c-.396 0-.786-.023-1.17-.068a13.945 13.945 0 007.548 2.213c9.057 0 14.01-7.506 14.01-14.01 0-.213-.005-.425-.015-.636A10.006 10.006 0 0024 4.557z"/>
+               </svg>
+            </a>
+            <a href="https://github.com/fastuptime" target="_blank" class="text-gray-600 hover:text-gray-800">
+               <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.608-4.042-1.608-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.24 1.838 1.24 1.07 1.834 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.606-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.48 11.48 0 013.005-.403c1.02.004 2.046.138 3.004.404 2.29-1.554 3.295-1.23 3.295-1.23.655 1.653.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.625-5.476 5.92.431.37.816 1.1.816 2.22 0 1.606-.015 2.898-.015 3.292 0 .322.216.694.825.576C20.565 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/>
+               </svg>
+            </a>
+         </div>
+      </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="./js/main.js"></script>
+   </body>
+</html>
